@@ -1,31 +1,17 @@
 package web.model;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class Car {
-
-    private String brand;
-
     private String model;
-
-    private int series;
+    private String color;
+    private int modelIndex;
 
     public Car() {
     }
 
-    public Car(String brand, String model, int series) {
-        this.brand = brand;
+    public Car(String model, String color, int modelIndex) {
         this.model = model;
-        this.series = series;
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
+        this.color = color;
+        this.modelIndex = modelIndex;
     }
 
     public String getModel() {
@@ -36,22 +22,26 @@ public class Car {
         this.model = model;
     }
 
-    public int getSeries() {
-        return series;
+    public String getColor() {
+        return color;
     }
 
-    public void setSeries(int series) {
-        this.series = series;
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public int getModelIndex() {
+        return modelIndex;
+    }
+
+    public void setModelIndex(int modelIndex) {
+        this.modelIndex = modelIndex;
     }
 
     @Override
     public String toString() {
-        return  """
-                
-                Car   [ Brand =     %s,
-                        Model =     %s,
-                        Series =    %s ]
-                """
-                .formatted(brand, model, series);
+        return model +
+                ", color: " + color +
+                ", model index: " + modelIndex;
     }
 }

@@ -28,6 +28,6 @@ public class CarsController {
             model.addAttribute("cars", carService.showCarsList(count));
         }
 
-        return "Сars";
+        return "сars";
     }
 }
